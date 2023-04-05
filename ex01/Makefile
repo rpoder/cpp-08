@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+         #
+#    By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/20 21:14:29 by ronanpoder        #+#    #+#              #
-#    Updated: 2023/04/01 17:58:26 by ronanpoder       ###   ########.fr        #
+#    Updated: 2023/04/03 11:54:05 by rpoder           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS		=	$(addprefix $(OBJS_PATH), $(SRC:.cpp=.o))
 DEPS		=	$(OBJS:.o=.d)
 
 
-CXXFLAGS		=	-MMD -Wall -Wextra -Werror -std=c++98 -I ./includes
+CXXFLAGS		=	-g3 -MMD -Wall -Wextra -Werror -std=c++98 -I ./includes
 
 EXEC		=	$(NAME)
 

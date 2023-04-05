@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:28:40 by rpoder            #+#    #+#             */
-/*   Updated: 2023/04/02 18:18:26 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2023/04/03 11:57:50 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	main()
 {
 	Span sp = Span(10);
 
-	sp.addNumber(6);
 	sp.addNumber(3);
+	sp.addNumber(6);
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);

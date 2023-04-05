@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:30:09 by rpoder            #+#    #+#             */
-/*   Updated: 2023/04/01 17:39:32 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2023/04/05 18:30:54 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASYFIND_HP
+# define
+
 #include <iostream>
+#include <algorithm>
 
 template <typename T>
 typename T::iterator	eastfind(T container, int to_find)

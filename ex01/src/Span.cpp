@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:58 by ronanpoder        #+#    #+#             */
-/*   Updated: 2023/04/02 18:00:01 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2023/04/05 18:02:06 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-//!-------------------------------CONSTRUCTOR-----------------------------------
+//!-------------------------------CACA------------------------------------------
 
 Span::Span(unsigned int n):
 	_size(n)
@@ -76,7 +76,7 @@ int	Span::shortestSpan()
 	tmp = _tab;
 	std::sort(tmp.begin(), tmp.end());
 	shortest = this->longestSpan();
-	for (std::vector<int>::iterator it = tmp.begin(); it < tmp.end() ; it++)
+	for (std::vector<int>::iterator it = tmp.begin(); it < tmp.end() - 1 ; it++)
 	{
 		if (abs(*it - (*(it + 1))) < shortest)
 			shortest = abs(*it - (*(it + 1)));
