@@ -6,19 +6,16 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:28:40 by rpoder            #+#    #+#             */
-/*   Updated: 2023/04/03 11:44:36 by rpoder           ###   ########.fr       */
+/*   Updated: 2023/04/06 17:30:16 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-
 #include <list>
-
-// 3 6 17 9 11 12
 
 int	main()
 {
-	std::cout << "--------------- TEST 1" << std::endl;
+	std::cout << "--------------- TEST 1.1" << std::endl;
 	{
 		std::list<int>	test;
 
@@ -26,6 +23,16 @@ int	main()
 		test.push_back(22);
 		test.push_back(33);
 		for (std::list<int>::iterator it = test.begin(); it != test.end(); it++)
+			std::cout << *it << std::endl;
+	}
+	std::cout << "--------------- TEST 1.2" << std::endl;
+	{
+		MutantStack<int> mstack;
+
+		mstack.push(11);
+		mstack.push(22);
+		mstack.push(33);
+		for (MutantStack<int>::iterator it = mstack.begin(); it != mstack.end(); it++)
 			std::cout << *it << std::endl;
 	}
 	std::cout << "--------------- TEST 2.1" << std::endl;
@@ -39,7 +46,6 @@ int	main()
 		mstack.push_back(3);
 		mstack.push_back(5);
 		mstack.push_back(737);
-		//[...]
 		mstack.push_back(0);
 		std::list<int>::iterator it = mstack.begin();
 		std::list<int>::iterator ite = mstack.end();

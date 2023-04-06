@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Stack.hpp                                          :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ronanpoder <ronanpoder@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:56:37 by ronanpoder        #+#    #+#             */
-/*   Updated: 2023/04/02 18:17:52 by ronanpoder       ###   ########.fr       */
+/*   Updated: 2023/04/06 17:21:36 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ class Span
 		std::vector<int>	_tab;
 
 		class VectorIsFullException:
-			std::exception
+			public std::exception
 		{
 			public:
 				const char	*what() const throw();
 		};
 		class WrongConstructorParametersException:
-			std::exception
+			public std::exception
 		{
 			public:
 				const char	*what() const throw();
 		};
 		class CannotCallFunctionException:
-			std::exception
+			public std::exception
 		{
 			public:
 				const char	*what() const throw();

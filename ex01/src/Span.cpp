@@ -6,19 +6,19 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:58 by ronanpoder        #+#    #+#             */
-/*   Updated: 2023/04/05 18:02:06 by rpoder           ###   ########.fr       */
+/*   Updated: 2023/04/06 17:35:04 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-//!-------------------------------CACA------------------------------------------
+//!---------------------------CONSTRUCTORS--------------------------------------
 
 Span::Span(unsigned int n):
 	_size(n)
 {
-	if (n <= 0)
-		throw (Span::WrongConstructorParametersException());
+	// if (n <= 0)
+	// 	throw (Span::WrongConstructorParametersException());
 	this->_tab.reserve(n);
 }
 
@@ -55,15 +55,9 @@ unsigned int	Span::getSize() const
 
 void	Span::addNumber(int number)
 {
-	if (_tab.size() > _size - 1)
+	if ( _size == 0 || _tab.size() > _size - 1)
 		throw (Span::VectorIsFullException());
-	try {
-		this->_tab.push_back(number);
-	}
-	catch (std::exception &error)
-	{
-		std::cout << error.what() << std::endl;
-	}
+	this->_tab.push_back(number);
 }
 
 int	Span::shortestSpan()
@@ -72,7 +66,7 @@ int	Span::shortestSpan()
 	int					shortest;
 
 	if (_tab.size() <= 1)
-		throw CannotCallFunctionException();
+		throw (Span::CannotCallFunctionException());
 	tmp = _tab;
 	std::sort(tmp.begin(), tmp.end());
 	shortest = this->longestSpan();
@@ -90,7 +84,7 @@ int	Span::longestSpan()
 	std::vector<int>::iterator	min;
 
 	if (_tab.size() <= 1)
-		throw CannotCallFunctionException();
+		throw (Span::CannotCallFunctionException());
 	max = std::max_element(_tab.begin(), _tab.end());
 	min = std::min_element(_tab.begin(), _tab.end());
 	return (*max - *min);

@@ -6,12 +6,12 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:30:09 by rpoder            #+#    #+#             */
-/*   Updated: 2023/04/05 18:30:54 by rpoder           ###   ########.fr       */
+/*   Updated: 2023/04/06 16:46:27 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HP
-# define
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 #include <iostream>
 #include <algorithm>
@@ -27,3 +27,5 @@ typename T::iterator	eastfind(T container, int to_find)
 	return (it);
 
 }
+
+#endif
