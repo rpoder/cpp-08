@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:28:40 by rpoder            #+#    #+#             */
-/*   Updated: 2023/04/06 17:42:07 by rpoder           ###   ########.fr       */
+/*   Updated: 2023/04/06 19:26:22 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	main()
 {
 	{
-		Span sp(5);
+		Span	sp(5);
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
@@ -25,12 +25,18 @@ int	main()
 		sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+		::printContainer(sp._tab);
 	}
 	{
 		try
 		{
-			Span sp(0);
+			Span	sp(3);
+			Span	sp2(3);
 			sp.addNumber(88);
+			sp.addNumber(99);
+			sp.addNumber(111);
+			sp2.addNumbers(sp._tab.begin(), sp._tab.end());
+			::printContainer(sp._tab);
 			std::cout << sp.shortestSpan() << std::endl;
 			std::cout << sp.longestSpan() << std::endl;
 		}
@@ -42,13 +48,14 @@ int	main()
 	{
 		try
 		{
-			Span sp2(0);
+			Span	sp2(0);
 			Span sp(MAX_SIZE);
 			for (int i = 0; i < MAX_SIZE; i++)
 				sp.addNumber(i);
 			// sp.addNumber(88);
 			std::cout << sp.shortestSpan() << std::endl;
 			std::cout << sp.longestSpan() << std::endl;
+			// ::printContainer(sp._tab);
 		}
 		catch(std::exception &e)
 		{

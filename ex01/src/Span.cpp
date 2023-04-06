@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:58 by ronanpoder        #+#    #+#             */
-/*   Updated: 2023/04/06 17:35:04 by rpoder           ###   ########.fr       */
+/*   Updated: 2023/04/06 19:23:10 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,14 @@ void	Span::addNumber(int number)
 	this->_tab.push_back(number);
 }
 
+void	Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	std::cout << _tab.size() + std::distance(begin, end) << std::endl;
+	if (_tab.size() + std::distance(begin, end) > _size)
+		throw (Span::TooMuchNumbers());
+	_tab.insert(_tab.begin(), begin, end);
+}
+
 int	Span::shortestSpan()
 {
 	std::vector<int>	tmp;
@@ -94,15 +102,20 @@ int	Span::longestSpan()
 
 const char	*Span::VectorIsFullException::what() const throw()
 {
-	return ("Vector: no more space");
+	return ("Vector: No more space");
 }
 
 const char	*Span::WrongConstructorParametersException::what() const throw()
 {
-	return ("Vector: wrong constructor parameters");
+	return ("Vector: Wrong constructor parameters");
 }
 
 const char	*Span::CannotCallFunctionException::what() const throw()
 {
 	return ("Cannot call function");
+}
+
+const char	*Span::TooMuchNumbers::what() const throw()
+{
+	return ("Vector: Too much numbers");
 }
