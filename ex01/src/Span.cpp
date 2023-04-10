@@ -6,7 +6,7 @@
 /*   By: rpoder <rpoder@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:58 by ronanpoder        #+#    #+#             */
-/*   Updated: 2023/04/06 19:23:10 by rpoder           ###   ########.fr       */
+/*   Updated: 2023/04/10 09:54:42 by rpoder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,9 @@ void	Span::addNumber(int number)
 
 void	Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-	std::cout << _tab.size() + std::distance(begin, end) << std::endl;
 	if (_tab.size() + std::distance(begin, end) > _size)
 		throw (Span::TooMuchNumbers());
-	_tab.insert(_tab.begin(), begin, end);
+	_tab.insert(_tab.end(), begin, end);
 }
 
 int	Span::shortestSpan()
